@@ -1,0 +1,25 @@
+.card-border-personalizado {
+    border: solid 1px red;
+    background-color: #4e4e52;
+    color:#c7bdbd;
+}
+
+.space-alert {
+    margin-top: 5px;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+  }
+  
+  .spin {
+  animation-name: spin;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  }

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\Services\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Templates\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MuOnline.Infrastruture.Application\MuOnline.Infrastruture.Application.csproj" />
+  </ItemGroup>
+
+</Project>

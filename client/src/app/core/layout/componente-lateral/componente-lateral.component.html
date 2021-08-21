@@ -1,0 +1,8 @@
+<div style="float: left;" class="w-25 p-3">
+  <app-login [form]="formStatus" *ngIf="!this.formStatus.get('logado').value"></app-login>
+  <app-painel-usuario [form]="formStatus" *ngIf="this.formStatus.get('logado').value"></app-painel-usuario>
+  <app-registrar *ngIf="!this.formStatus.get('logado').value"></app-registrar>
+  <app-download *ngIf="this.formStatus.get('logado').value"></app-download>
+  <app-server-info></app-server-info>
+  <app-outros></app-outros>
+</div>

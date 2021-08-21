@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="card w-100 card-border-personalizado">
+    <span class="card-header">Entrar na sua conta</span>
+    <div class="card-body img-fundo">
+      <form class="form-group" [formGroup]="formLogin">
+        <label>Login</label>
+        <input class="form-control" type="text" formControlName="login" />
+        <br />
+        <label>Senha</label>
+        <input class="form-control" type="password" formControlName="senha" />
+        <br />
+        
+          <button [disabled]="formLogin.invalid || statusBlock" class="btn btn-primary" (click)="logar()">Entrar
+            <div *ngIf="this.statusLoading === true">
+              <span class="material-icons spin">
+                  rotate_right
+              </span>
+            </div>
+          </button>
+           
+      </form>
+      
+    </div>
+    <div class="card-footer">
+      <a routerLink="recuperar-senha">Esqueci minha senha</a>
+    </div>
+  </div>
+</div>
+<br>

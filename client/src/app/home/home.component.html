@@ -1,0 +1,13 @@
+<div style="float: left;" class="w-75 p-3">
+  <div *ngFor="let item of noticias; let i = index">
+    <mat-expansion-panel class="card-border-personalizado" multi="false" expanded="{{ item.expandad }}">
+      <mat-expansion-panel-header>
+        {{ item.titulo + " " + (i + 1) }}
+      </mat-expansion-panel-header>
+      <mat-panel-description>
+        <div innerHTML="{{ item.corpoNoticia }}"></div>
+      </mat-panel-description>
+    </mat-expansion-panel>
+    <br />
+  </div> 
+</div>

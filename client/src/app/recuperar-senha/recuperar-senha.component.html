@@ -1,0 +1,29 @@
+<div style="float: left;" class="w-75 p-3">
+    <div class="card w-100 card-border-personalizado">
+        <span class="card-header">Recuperar senha com nome do usuário ou e-mail</span>
+        <div class="card-body img-fundo">
+            <form class="form-group" [formGroup]="formRecuperar">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Nome do usuário</label>
+                        <input class="form-control" type="text" formControlName="nomeUsuario" required />
+                    </div>
+                    <div class="col-md-4">
+                        <label>E-mail</label>
+                        <input class="form-control" type="text" formControlName="email" required />
+                    </div>
+                </div>
+                <br>
+                <button
+                    [disabled]="(!this.formRecuperar.get('nomeUsuario').value && !this.formRecuperar.get('email').value) || statusBlock"
+                    class="btn btn-primary" (click)="recuperar()">Recuperar
+                    <div *ngIf="this.statusLoading === true">
+                        <span class="material-icons spin">
+                            rotate_right
+                        </span>
+                    </div>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

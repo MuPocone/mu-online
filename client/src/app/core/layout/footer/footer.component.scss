@@ -1,0 +1,15 @@
+.footer {
+  font-family: "Segoe UI", "Lucida Sans Unicode", "Lucida Grande", "Tahoma",
+    "Arial", "sans-serif";
+  width: 100%;
+  font-size: 14px;
+  background: #000 url(../../../../assets/img/footer.jpg) no-repeat center
+    center;
+  color: #666;
+  overflow: auto;
+
+  .footer-container {
+    width: 1000px;
+    margin: 0px auto;
+  }
+}

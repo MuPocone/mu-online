@@ -1,0 +1,74 @@
+<div style="float: left;" class="w-75 p-3">
+    <div class="card w-100 card-border-personalizado">
+        <span class="card-header">Registrar nova conta</span>
+        <div class="card-body img-fundo">
+            <form class="form-group" [formGroup]="formRegistro">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Login pra entrar no jogo</label>
+                        <input class="form-control" type="text" formControlName="nomeUsuario" required />
+                        <div *ngIf="nomeUsuario.invalid && (nomeUsuario.dirty || nomeUsuario.touched)" class="alert alert-danger space-alert">
+                            <div *ngIf="nomeUsuario.errors.required">
+                                O login é obrigatório
+                            </div>
+                            <div *ngIf="nomeUsuario.errors.minlength">
+                                O minimo de caracteres permitidos é 4.
+                            </div>
+                            <div *ngIf="nomeUsuario.errors.maxlength">
+                                O máximo de caracteres permitidos é 10.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Digita senha ai</label>
+                        <input class="form-control" type="text" formControlName="senha" required />
+                        <div *ngIf="senha.invalid && (senha.dirty || senha.touched)" class="alert alert-danger space-alert">
+                            <div *ngIf="senha.errors.required">
+                                A senha é obrigatória.
+                            </div>
+                            <div *ngIf="senha.errors.minlength">
+                                A senha deve ter no minimo 4 caracteres.
+                            </div>
+                            <div *ngIf="senha.errors.maxlength">
+                                O máximo de caracteres permitidos é 10.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Arruma o e-mail também</label>
+                        <input class="form-control" type="text" formControlName="email" required />
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger space-alert">
+                            <div *ngIf="email.errors.required">
+                                O e-mail é obrigatório.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Qual seu nome? (Opcional)</label>
+                        <input class="form-control" type="text" formControlName="nome" maxlength="80" />
+                    </div>
+                    <div class="col-md-4">
+                        <label>Você nasceu quando? (Opcional)</label>
+                        <input class="form-control" type="text" formControlName="dataNascimento" />
+                    </div>
+                    <div class="col-md-4">
+                        <label>Qual seu telefone? (Opcional)</label>
+                        <input class="form-control" type="text" formControlName="telefone" maxlength="15" />
+                    </div>
+                </div>
+                <br>
+                <button [disabled]="formRegistro.invalid || statusBlock" class="btn btn-primary"
+                    (click)="registrar()">Registrar
+                    <div *ngIf="this.statusLoading === true">
+                        <span class="material-icons spin">
+                            rotate_right
+                        </span>
+                      </div>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
